@@ -54,10 +54,9 @@ def load_game():
 
     if choose_game == 1:
         MemoryGame.play(choose_level)
-        clean()
     if choose_game == 2:
         GuessGame.play(choose_level)
-        clean()
     if choose_game == 3:
         CurrencyRoulette.play(choose_level)
-        clean()
+
+    clean()
