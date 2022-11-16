@@ -1,6 +1,6 @@
+import Live 
 import random
 import time
-from Live import clean
 
 
 def generate_sequence(length_random_list):
