@@ -1,21 +1,18 @@
+from Utils import screen_cleaner
 from game import CurrencyRouletteGame as CurrencyRoulette, GuessGame, MemoryGame
 import os
 
 
-def clean():
-    os.system('cls' if os.name == 'nt' else 'clear')
-
-
 def welcome():
     name = input('Please enter your name: ')
-    clean()
+    screen_cleaner()
     print('<====================================================>')
     print(f"Hello {name} and welcome to the World of Games (WoG). \n"
           "Here you can find many cool games to play.")
     print('<====================================================>')
     print('\n')
     input('Please press enter to continue.')
-    clean()
+    screen_cleaner()
 
 def check_user_input(user_choose, first, last):
     if user_choose.isnumeric():
@@ -43,12 +40,12 @@ def load_game():
               "3. Currency Roulette - try and guess the value of a random amount of USD in ILS")
         print('\n')
         choose_game = input('Please enter your choose: ')
-        clean()
+        screen_cleaner()
         check_input, choose_game = check_user_input(choose_game, 1, 3)
 
     while check_input:
         choose_level = input("Please choose game difficulty from 1 to 5: ")
-        clean()
+        screen_cleaner()
         check_input, choose_level = check_user_input(choose_level, 1, 5)
         check_input = not check_input
 
@@ -59,4 +56,4 @@ def load_game():
     if choose_game == 3:
         CurrencyRoulette.play(choose_level)
 
-    clean()
+    screen_cleaner()

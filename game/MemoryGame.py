@@ -44,7 +44,7 @@ def play(level):
     secret_list_number = generate_sequence(level)
     print(secret_list_number)
     time.sleep(0.7)
-    Live.clean()
+    Live.screen_cleaner()
 
     guess_list_numer = get_list_from_user(level)
     if is_list_equal(secret_list_number, guess_list_numer):

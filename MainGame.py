@@ -1,4 +1,5 @@
-from Live import welcome, load_game, clean
+from Live import welcome, load_game
+from Utils import screen_cleaner
 
 welcome()
 
@@ -9,6 +10,6 @@ while True:
     answer = input('Press [Y/y] for yes, to exit press any key: ')
 
     if answer == 'Y' or answer == 'y':
-        clean()
+        screen_cleaner()
     else:
         exit()
