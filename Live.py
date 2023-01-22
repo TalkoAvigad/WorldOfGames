@@ -1,6 +1,6 @@
+from Score import add_score
 from Utils import screen_cleaner
 from game import CurrencyRouletteGame as CurrencyRoulette, GuessGame, MemoryGame
-import os
 
 
 def welcome():
@@ -50,10 +50,13 @@ def load_game():
         check_input = not check_input
 
     if choose_game == 1:
-        MemoryGame.play(choose_level)
+        if MemoryGame.play(choose_level):
+            add_score(choose_level)
     if choose_game == 2:
-        GuessGame.play(choose_level)
+        if GuessGame.play(choose_level):
+            add_score(choose_level)
     if choose_game == 3:
-        CurrencyRoulette.play(choose_level)
+        if CurrencyRoulette.play(choose_level):
+            add_score(choose_level)
 
     screen_cleaner()
